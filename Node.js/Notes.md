@@ -1,0 +1,14 @@
+# Important notes
+
+## Module Wrapper Function
+For CommonJS (CJS) system Node.js adds automatically a runtime wraps around the code of every single CommonJS (CJS) module before executing it. It is to isolate and grants the access to the module scope by these 5 parametters/variables.
+```js
+(function (exports, require, module, __filename, __dirname) {
+
+})
+```
+
+Important: 
+- ES Modules (ESM), or ECMAScript Modules replace this way from CommonJS (CJS) system.
+- ESM is the module system used everywhere today, from browsers to Node.js backend projects (like Next.js).
+```
