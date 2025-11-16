@@ -20,9 +20,7 @@ var logger = require('./logger');
 logger.log('My custom message');
 ```
 
+## Built in modules
 
-
-## OS
-## Fs
-## Events
-## Http
+### Path
+Utilities for working with file abd directory paths.
