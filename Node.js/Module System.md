@@ -24,3 +24,6 @@ logger.log('My custom message');
 
 ### Path
 Utilities for working with file abd directory paths.
+
+### OS
+Operating system related methods and properties.
