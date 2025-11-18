@@ -27,3 +27,6 @@ Utilities for working with file abd directory paths.
 
 ### OS
 Operating system related methods and properties.
+
+### File system
+To working with files and directories.

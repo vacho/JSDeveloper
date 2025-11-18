@@ -7,6 +7,20 @@ For CommonJS (CJS) system Node.js adds automatically a runtime wraps around the 
 
 })
 ```
+## Destructuring
+
+Calling the fs entire object and work with this.
+```js
+const fs = require('node.fs');
+fs.unlink('/tmp/some-file.txt');
+```
+
+Destructuring assignment.
+```js
+const { unlink } = require('node.fs');
+unlink('/tmp/some-file.txt');
+```
+
 
 Important: 
 - ES Modules (ESM), or ECMAScript Modules replace this way from CommonJS (CJS) system.

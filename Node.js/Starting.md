@@ -26,6 +26,6 @@ npm -v
 
 
 ## References
-- The official website https://nodejs.org/en
-- Good video to unsderstand and start.https://www.youtube.com/watch?v=TlB_eWDSMt4
+- The official website: https://nodejs.org/en
+- Good video to unsderstand and start: https://www.youtube.com/watch?v=TlB_eWDSMt4
 
