@@ -24,6 +24,9 @@ var variable = 'Really flexible'
 ```
 
 ## Asyncronous programing
+Asynchronous programming enables the execution of potentially long-running tasks without blocking the main thread of execution. This allows the program to remain responsive and continue processing other operations while waiting for the asynchronous task to complete.
+
+To manage in js you have 2 options callbacks functions and promises. See Examples/asuncrhonous to understand.
 
 ## Arrow function
 
