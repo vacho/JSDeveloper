@@ -28,6 +28,58 @@ Asynchronous programming enables the execution of potentially long-running tasks
 
 To manage in js you have 2 options callbacks functions and promises. See Examples/asuncrhonous to understand.
 
+Common cases:
+- Data fetching.
+- Calling backend APIs.
+- Loading Files.
+- Timers and intervals.
+
+## Promises
+Is an js object that represents the eventual completion or failure of an asynchronous operation, and its resulting value.
+
+A promise have 3 states: pending => fulfilled or rejected.
+
+Example of basic promise
+```js
+function getWeather() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        resolve('Rainy');
+        //reject('Sunny');    
+        }, 100);
+    });
+}
+
+function getWeatherIcon(weather) {
+    return new Promise(function(resolve, reject) {
+        setTimeout(() => {
+            switch(weather) {
+                case 'Sunny':
+                    resolve('☀️');
+                    break;
+                case 'Rainy':
+                    resolve('🌧️');
+                case 'Cloudy':
+                    resolve('☁️');
+                default:
+                    reject('Error, no icon found!');
+            }
+        });
+    });
+}
+function onSuccess(data) {
+    console.log(`Success ${data}`);
+}
+function onError(data) {
+    console.log(`Error ${data}`);
+}
+
+getWeather()
+    .then(getWeatherIcon)
+    .then(onSuccess, onError)
+;
+```
+
 ## Arrow function
 
 Arrow Functions are a modern, concise way to write function expressions in JavaScript. They allow for shorter syntax than traditional function expressions and, most importantly, handle the this keyword differently, which solves a lot of common JavaScript bugs.
