@@ -82,7 +82,12 @@ getWeather()
 
 ## Arrow function
 
-Arrow Functions are a modern, concise way to write function expressions in JavaScript. They allow for shorter syntax than traditional function expressions and, most importantly, handle the this keyword differently, which solves a lot of common JavaScript bugs.
+Arrow Functions are a modern, concise way to write function expressions in JavaScript. They allow for shorter syntax than traditional function expressions and, most importantly, handle the 'this' keyword differently(their surrounding), which solves a lot of common JavaScript bugs.
+
+Avoid to use in:
+- Constructors.
+- Object methods.
+- Methods that use arguments: Arrow functions do not have their own arguments object. They inherit the arguments from the nearest non-arrow parent function.
 
 ```js
 class Timer {
