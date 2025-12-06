@@ -1,8 +1,8 @@
 # Important notes
 
 ## Data types
-Primitives: string, number, bigint, boolean, undefined, symbol, null
-Objects
+Primitives: String, Number, BigInt, Boolean, Symbol, undefined, null
+Objects: Object(literals{}), Array, Function, Date, RegExp, etc. 
 
 ## Defining variables
 
@@ -151,6 +151,9 @@ setTimeout(user.logInfo, 100);
 // Why? Because setTimeout runs the function without any context (this refers to the global object).
 ```
 
+## Value Vs Reference
+- Pass by value is for Primitives: When you copy a primitive value, JavaScript allocates a new space in memory for the new variable and copies the content of the old variable into it.
+- Pass by reference is for Objects: When you assign an object to a new variable, the content itself is not copied. Instead, the memory address (the reference) pointing to the original object is copied.
 
 Important: 
 - ES Modules (ESM), or ECMAScript Modules replace this way from CommonJS (CJS) system.
