@@ -3,14 +3,20 @@ const token = 'BQBWd5YpNASQyTqT-DGlwGHJlvEtYgtZA2SoibkSdsJlb94uW-Dgw4zLyqrpLhiV4
 const baseUrl = 'https://api.spotify.com/';
 
 async function fetchWebApi(endpoint, method, body) {
-  const res = await fetch(`${baseUrl}${endpoint}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method,
-    body:JSON.stringify(body)
-  });
-  return await res.json();
+  try {
+    const res = await fetch(`${baseUrl}${endpoint}`, {
+        headers: {
+        Authorization: `Bearer ${token}`,
+        },
+        method,
+        body:JSON.stringify(body)
+    });
+    return await res.json();
+  }
+  catch (error) {
+    console.error(`ERROR MANAGED: ${error}`);
+    return null;
+  }
 }
 
 async function getTopTracks(){
