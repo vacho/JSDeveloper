@@ -1,24 +1,24 @@
 # Important notes
 
 ## Data types
-Primitives: String, Number, BigInt, Boolean, Symbol, undefined, null
+Primitives: String, Number, BigInt, Boolean, Symbol, undefined, null.
 Objects: Object(literals{}), Array, Function, Date, RegExp, etc. 
 
 ## Defining variables
 
 ```js
 // Value: You can always change even you can change the data type.
-// Scope: Are only visible within the block ({...})
+// Scope: block scoped {...}
 // Not initialized.
 let variableName;
 
-// Value: You can't reasign a value for this.
-// Scope: Behaves identically to let.
+// Value: You can't reasign a value for this, but you can change attribute values in a object.
+// Scope: block scoped {...}
 // Not initialized.
 const name = 'Osvaldo';
 
-// Value: Behaves identically to let.
-// Scope: Are visible anywhere.
+// Value: You can always change even you can change the data type.
+// Scope: function scoped
 // Initialized to undefined
 var variable = 'Really flexible'
 ```
@@ -26,7 +26,7 @@ var variable = 'Really flexible'
 ## Asyncronous programing
 Asynchronous programming enables the execution of potentially long-running tasks without blocking the main thread of execution. This allows the program to remain responsive and continue processing other operations while waiting for the asynchronous task to complete.
 
-To manage in js you have 2 options callbacks functions and promises. See Examples/asuncrhonous to understand.
+To manage in js you have 2 options callbacks functions and promises. See Examples/asyncrhonous to understand.
 
 Common cases:
 - Data fetching.
@@ -44,8 +44,8 @@ Example of basic promise
 function getWeather() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-        resolve('Rainy');
-        //reject('Sunny');    
+            resolve('Rainy');
+            //reject('Sunny');    
         }, 100);
     });
 }
@@ -106,7 +106,7 @@ class Timer {
         }, 1000);
     }
 }
-// const t = new Timer('Clock'); t.start(); // -> Crashes or logs 'undefined'
+const t = new Timer('Clock'); t.start(); // -> Crashes or logs 'undefined'
 
 class Timer {
     constructor(name) {
@@ -123,7 +123,7 @@ class Timer {
         }, 1000);
     }
 }
-// const t = new Timer('Clock'); t.start(); // -> Works perfectly!
+const t = new Timer('Clock'); t.start(); // -> Works perfectly!
 ```
 
 ## Bind

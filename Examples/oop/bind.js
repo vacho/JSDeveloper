@@ -5,7 +5,7 @@ class TaskTracker {
         this.status = 'Pending';
         
         // Use bind(this) to create a new and permanently bound version of the 'updateStatus' method.
-        his.updateStatusBound = this.updateStatus.bind(this);
+        this.updateStatusBound = this.updateStatus.bind(this);
         //this.updateStatusBound = this.updateStatus.call(this);
     }
     
