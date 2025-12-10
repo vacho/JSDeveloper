@@ -158,3 +158,10 @@ setTimeout(user.logInfo, 100);
 Important: 
 - ES Modules (ESM), or ECMAScript Modules replace this way from CommonJS (CJS) system.
 - ESM is the module system used everywhere today, from browsers to Node.js backend projects (like Next.js).
+
+## Pure functions
+- Always returs the same output, for a given input.
+- No side-efects. (no change external values)
+This functions are cleaner, predictable, consistent and debuggable.
+
+Impure functions were useful for: DOM manipulation, Math.random(), new Date(), user input, File IO, Network requests
