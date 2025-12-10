@@ -165,3 +165,86 @@ Important:
 This functions are cleaner, predictable, consistent and debuggable.
 
 Impure functions were useful for: DOM manipulation, Math.random(), new Date(), user input, File IO, Network requests
+
+## First class citizen: functions
+In js you can do everything with functions that you can do with any other data type.
+
+1. Can asign a function to a variables => reusability, readability
+```js
+const theTime = function() {
+    const now = new Date();
+    return now.getHours()+':'+now.getMinutes();
+}
+console.log(theTime());
+```
+2. Can pass functions as argument => Functional pardigm, modularity, reusability, testeability
+```js
+// Works in chrome browser
+function gretting(callback) {
+    console.log(`Hello ${callback} user`);
+}
+function getSO() {
+    return navigator.platform;
+}
+gretting(getSO());
+
+const array = [1,2,3,4];
+const elements = array.map(createElement);
+
+function createElement(item) {
+    return `<li>${item}</li>`;
+}
+console.log(elements);
+```
+3. Functions can be returned from other functions => Factory pattern.
+```js
+function greeter(lan) {
+    return function (name) {
+        if (lan == 'en') {
+            console.log(`Hello ${name}`);
+        } else if (lan == 'es') {
+            console.log(`Hola ${name}`);
+        }
+    }
+}
+
+const esGretting = greeter('es');
+esGretting('Osvaldo');
+```
+4. Functions can be curried (partial execution) => specialized functions
+```js
+function printAmount(sign) {
+    return function (amount) {
+        return `${sign}${amount}`;
+    }
+}
+const usdAmount = printAmount('$');
+const bsAmount = printAmount('Bs');
+
+usdAmount(100);
+bsAmount(698);
+printAmount('USDT')(100);
+printAmount('BTC')(0.000025);
+```
+5. You can create Clousures
+```js
+function createGreeter(name) {
+  return function get_message() {
+    console.log(`Hello, ${name}!`);
+  };
+}
+const greetMate = createGreeter('Mate');
+// Because greetMate holds a closure over it, the 'Mate' value persists in memory.
+greetMate(); // Output: Hello, Mate!
+```
+6. Functions can be stored in data structures => Dynamic manipulation, code organization
+```js
+const add = (a,b) => a+b;
+const substract = (a,b) => a-b;
+const operations = [add, substract, (a,b) => a*b ];
+
+operations[0](3,1);
+operations[1](2,1);
+operations[2](3,2);
+```
+7. Anonymous functions => Less code, inmediatelly call => callbacks, errors functions, event listeners
