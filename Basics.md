@@ -248,3 +248,7 @@ operations[1](2,1);
 operations[2](3,2);
 ```
 7. Anonymous functions => Less code, inmediatelly call => callbacks, errors functions, event listeners
+
+
+## References
+- A video series with main points: https://www.youtube.com/watch?v=jnME98ckDbQ&list=PL1PqvM2UQiMoGNTaxFMSK2cih633lpFKP
