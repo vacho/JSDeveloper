@@ -251,4 +251,5 @@ operations[2](3,2);
 
 
 ## References
-- A video series with main points: https://www.youtube.com/watch?v=jnME98ckDbQ&list=PL1PqvM2UQiMoGNTaxFMSK2cih633lpFKP
+- A video series with main points: https://www.youtube.com/playlist?list=PL1PqvM2UQiMoGNTaxFMSK2cih633lpFKP
+
