@@ -249,6 +249,40 @@ operations[2](3,2);
 ```
 7. Anonymous functions => Less code, inmediatelly call => callbacks, errors functions, event listeners
 
+## Inumutability
+Variable that can't change.
+
+You need to manage the mutability to get this profits:
+- Fewer bugs.
+- No silent changes.
+- Monitoring.
+- Easier to Debug.
+- Order of changes.
+- Stack trace.
+- Undo / Redo.
+- Predictable.
+
+'const' variables:
+- Constant can't protect the inmutability for objects where you can add attributes, change values and behaviours.
+
+```js
+// Copy object into a new object
+const newCopy = 
+{...obj}
+[...array]
+Object.asign({}, obj)
+_.cloneDeep(obj)
+map, filter
+structuredClone(obj)
+
+// Freeze the high level object properties
+const a = {id:1, data:{d1:'data 1', d2:'data2'}};
+Object.freeze(a);
+a.id = 2;
+a.name = 'Other name';
+a.data.d2 = "Other data";
+
+```
 
 ## References
 - A video series with main points: https://www.youtube.com/playlist?list=PL1PqvM2UQiMoGNTaxFMSK2cih633lpFKP
