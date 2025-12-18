@@ -41,4 +41,4 @@ try {
     console.log('Successfully deleted /tmp/hello.txt file');
 } catch (err) {
     console.error('There was an error:', err.message)
-}
+};

@@ -1,7 +1,7 @@
 var url = 'http://mylogger.io/log';
 
 function log(message) {
-    console.log(message);
+    console.log('Using log function: ' + message);
 }
 // Exports the log function.
 module.exports = log;
@@ -12,8 +12,8 @@ module.exports.log = log;
 exports.log = log; //exports reference to module.exports
 
 // The five parametters available in every module file.
-//console.log(exports); // circular reference.
-//console.log(require);
-//console.log(module);
-//console.log(__filename);
-//console.log(__dirname);
+//console.log('Exports =>', exports); // circular reference.
+//console.log('Require =>', require);
+//console.log('module =>', module);
+//console.log('__filename =>', __filename);
+//console.log('__dirname =>', __dirname);
