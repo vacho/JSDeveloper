@@ -31,5 +31,9 @@ tsc --init
 - Run debug on VS code and select Node.js as launcher
 - This generates a file /home/vacho/projects/JSDeveloper/.vscode/launch.json
 
+## Types
+From js => number, string, boolean, null, undefined, object.
+Typescript => any, unknown, never, enum, tuple   
+
 ## References
 - Video tutorial https://www.youtube.com/watch?v=d56mG7DezGs
