@@ -1,0 +1,20 @@
+{
+  "name": "single_node",
+  "version": "1.0.0",
+  "description": "A single node example",
+  "keywords": [
+    "node"
+  ],
+  "license": "GPL-3.0",
+  "author": "vacho",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
