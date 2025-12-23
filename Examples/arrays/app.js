@@ -22,3 +22,22 @@ let reverse = fruits.map(fruit =>
     fruit.split('').reverse().join('')
 )
 console.log('Reverse:', reverse);
+
+// Object arrays filters
+let employees = [
+    {
+        "id": 1,
+        "firstname": "Dave",
+        "lastname": "Gray"
+    },
+    {
+        "id": 2,
+        "firstname": "John",
+        "lastname": "Smith"
+    }
+];
+let employee1 = employees.find(emp => emp.firstname === "Dave");
+let employee2 = employees.find(emp => emp.id === 2);
+let index = employees.findIndex(emp => emp.firstname === "John");
+console.log(employee1);
+console.log(index);
