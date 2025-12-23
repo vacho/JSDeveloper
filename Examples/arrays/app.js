@@ -41,3 +41,6 @@ let employee2 = employees.find(emp => emp.id === 2);
 let index = employees.findIndex(emp => emp.firstname === "John");
 console.log(employee1);
 console.log(index);
+
+// Delete an element from objects array.
+const deletedEmployee = employees.splice(index, 1);
