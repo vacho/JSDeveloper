@@ -23,7 +23,7 @@ let reverse = fruits.map(fruit =>
 )
 console.log('Reverse:', reverse);
 
-// Object arrays filters
+// Object arrays.
 let employees = [
     {
         "id": 1,
@@ -36,11 +36,21 @@ let employees = [
         "lastname": "Smith"
     }
 ];
+// How to filter.
 let employee1 = employees.find(emp => emp.firstname === "Dave");
 let employee2 = employees.find(emp => emp.id === 2);
 let index = employees.findIndex(emp => emp.firstname === "John");
 console.log(employee1);
 console.log(index);
+
+// Add a new element to objects array using Spread operator.
+let newEmployee = {
+    "id": 3,
+    "firstname": "Mary",
+    "lastname": "Johnson"
+};
+employees = [...employees, newEmployee];
+console.log(employees);
 
 // Delete an element from objects array.
 const deletedEmployee = employees.splice(index, 1);
