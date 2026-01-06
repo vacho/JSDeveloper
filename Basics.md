@@ -287,17 +287,33 @@ a.data.d2 = "Other data";
 ## Proxy
 An object that lets custom behaviours for basic operations: READ, WRITE, Existence check, Function calls, etc.
 ```js
-const me = {name: 'Osvaldo', age: 1};
-// Basic intercept.
-const myProxy = new Proxy(me, {
-  get(target, prop) {
-      console.log(`Accessing prop: ${prop}`);
-      return target[prop];
-  }
+let me = {name: 'Osvaldo', password: '***', age: 1};
+me = new Proxy(me, {
+    // Intercept to read.
+    get(target, prop) {
+        console.log(`Accessing prop: ${prop}`);
+        // protect an attribute.
+        if (prop == 'password') {
+            throw new Error('Access denied');
+        }
+        return target[prop];
+    },
+    // Intercept to write.
+    set(target, prop, value) {
+        if (prop == 'age' && value < 0) {
+            throw new Error('Age not valid');
+        }
+        target[prop] = value;
+        return true;
+    }
 });
 
-console.log(myProxy.age);
-console.log(myProxy.name);
+//console.log(me.age);
+//console.log(me.name);
+//console.log(me.password);
+me.age = -43;
+me.age = 87;
+console.log(me.age);
 
 ```
 
