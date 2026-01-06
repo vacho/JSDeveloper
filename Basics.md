@@ -296,13 +296,17 @@ me = new Proxy(me, {
         if (prop == 'password') {
             throw new Error('Access denied');
         }
-        return target[prop];
+        // Auto fall-back.
+        return prop in target ? target[prop] : 'Not found';
     },
     // Intercept to write.
     set(target, prop, value) {
         if (prop == 'age' && value < 0) {
             throw new Error('Age not valid');
         }
+        // Conditional read-only
+        if (prop === 'password')
+            throw new Error("You can't modify this");
         target[prop] = value;
         return true;
     }
