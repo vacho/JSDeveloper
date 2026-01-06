@@ -284,6 +284,25 @@ a.data.d2 = "Other data";
 
 ```
 
+## Proxy
+An object that lets custom behaviours for basic operations: READ, WRITE, Existence check, Function calls, etc.
+```js
+const me = {name: 'Osvaldo', age: 1};
+// Basic intercept.
+const myProxy = new Proxy(me, {
+  get(target, prop) {
+      console.log(`Accessing prop: ${prop}`);
+      return target[prop];
+  }
+});
+
+console.log(myProxy.age);
+console.log(myProxy.name);
+
+```
+
+
+
 ## References
 - A video series with main points: https://www.youtube.com/playlist?list=PL1PqvM2UQiMoGNTaxFMSK2cih633lpFKP
 
